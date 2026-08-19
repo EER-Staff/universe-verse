@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z序列图鉴 · Цη¡νerse ∀erse</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 1.8em;
+            color: #f0f6fc;
+            margin: 0;
+        }
+        .back-btn {
+            color: #58a6ff;
+            text-decoration: none;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #161b22;
+            border-color: #58a6ff;
+        }
+
+        /* 图鉴表格样式 */
+        .series-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: 80px 250px 100px;
+            background-color: #161b22;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #21262d;
+            align-items: center;
+            font-size: 0.95em;
+        }
+        .row.header {
+            background-color: #0d1117;
+            border: none;
+            font-weight: bold;
+            color: #8b949e;
+            padding-bottom: 5px;
+        }
+
+        /* 等级配色 */
+        .level-e { color: #8b949e; }
+        .level-d { color: #d2a8ff; }
+        .level-c { color: #f0883e; }
+        .level-b { color: #d29922; }
+        .level-a { color: #58a6ff; }
+        .level-s { color: #f85149; }
+        .level-ss { color: #ff7b72; }
+        .level-spp { color: #f97583; font-weight: bold; }
+        .level-float { color: #9e6a03; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #8b949e;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <h1>👾 Z序列图鉴 (Z-001 ~ Z-100)</h1>
+            <a href="index.html" class="back-btn">← 返回主站</a>
+        </div>
+
+        <div class="series-grid">
+            <!-- 表头 -->
+            <div class="row header">
+                <div>编号</div>
+                <div>名称</div>
+                <div>等级</div>
+            </div>
+
+            <!-- Z-001 ~ Z-100 数据 -->
+            <div class="row"><div>Z-001</div><div>小助手</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-002</div><div>雨衣女孩</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-003</div><div>雨衣</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-004</div><div>迷神怪药</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-005</div><div>红泉</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-006</div><div>臭水警察</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-007</div><div>重型坦克</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-008</div><div>此地无物</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-009</div><div>拟形</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-010</div><div>药</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-011</div><div>水雾</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-012</div><div>火飞</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-013</div><div>钢铁水火石</div><div class="level-s">S</div></div>
+            <div class="row"><div>Z-014</div><div>迷神怪药（融合体）</div><div class="level-s">S+</div></div>
+            <div class="row"><div>Z-015</div><div>兵用圆规</div><div class="level-d">D</div></div>
+            <div class="row"><div>Z-016</div><div>尺团</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-017</div><div>梦剪</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-018</div><div>物剪</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-019</div><div>胶卷</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-020</div><div>重建橡皮</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-021</div><div>时光列车</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-022</div><div>行囊之虫</div><div class="level-e">E</div></div>
+            <div class="row"><div>Z-023</div><div>磁石</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-024</div><div>损坏机器</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-025</div><div>巨食虫</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-026</div><div>机械之声</div><div class="level-s">S+</div></div>
+            <div class="row"><div>Z-027</div><div>风（永恒尘埃）</div><div class="level-s">S+</div></div>
+            <div class="row"><div>Z-028</div><div>竹节虫</div><div class="level-d">D</div></div>
+            <div class="row"><div>Z-029</div><div>愁因弗守</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-030</div><div>脑电波</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-031</div><div>黑夜</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-032</div><div>欲望指环</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-033</div><div>生姜海狗</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-034</div><div>周周小鸟（周辰霖雀）</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-035</div><div>旋扇</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-036</div><div>画中微笑</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-037</div><div>布丁</div><div class="level-d">D</div></div>
+            <div class="row"><div>Z-038</div><div>Corrupted Data</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-039</div><div>最后伪者</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-040</div><div>臭水</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-041</div><div>天秤</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-042</div><div>血雨</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-043</div><div>穿刺</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-044</div><div>光棱</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-045</div><div>爆炸骑士</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-046</div><div>昨日回响</div><div class="level-d">D</div></div>
+            <div class="row"><div>Z-047</div><div>小咪（咪咪）</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-048</div><div>小布</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-049</div><div>无声的默剧演员</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-050</div><div>此为梦境</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-051</div><div>怒因受创</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-052</div><div>静因无事</div><div class="level-b">A-/B+</div></div>
+            <div class="row"><div>Z-053</div><div>喜因得获</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-054</div><div>璀璨星辰</div><div class="level-a">E（A+）</div></div>
+            <div class="row"><div>Z-055</div><div>恨因事逝</div><div class="level-b">B+ / A-</div></div>
+            <div class="row"><div>Z-056</div><div>被划去的祈愿</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-057</div><div>辐射男孩</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-058</div><div>暴食之徒</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-059</div><div>阁楼回响</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-060</div><div>上一个世纪的唱片机</div><div class="level-d">D</div></div>
+            <div class="row"><div>Z-061</div><div>十一月四日风雨大作</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-062</div><div>海雾</div><div class="level-e">E</div></div>
+            <div class="row"><div>Z-063</div><div>█欲</div><div class="level-b">B+ / A-</div></div>
+            <div class="row"><div>Z-064</div><div>目中无我</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-065</div><div>重力球</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-066</div><div>月亮</div><div class="level-b">B+ / A-</div></div>
+            <div class="row"><div>Z-067</div><div>？</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-068</div><div>异世界的法杖</div><div class="level-b">B+ / A-</div></div>
+            <div class="row"><div>Z-069</div><div>武器装备同化</div><div class="level-float">浮动</div></div>
+            <div class="row"><div>Z-070</div><div>不死蟑螂（Roachy）</div><div class="level-spp">S++</div></div>
+            <div class="row"><div>Z-071</div><div>“？”球</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-072</div><div>巨型血雨</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-073</div><div>石山花</div><div class="level-s">S+</div></div>
+            <div class="row"><div>Z-074</div><div>1010</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-075</div><div>李家沦</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-076</div><div>泰尔</div><div class="level-c">C</div></div>
+            <div class="row"><div>Z-077</div><div>顺便</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-078</div><div>10-12</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-079</div><div>魔导师</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-080</div><div>凤飞飞</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-081</div><div>横眼</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-082</div><div>竖眼</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-083</div><div>追击</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-084</div><div>葡头鸟</div><div class="level-a">A+</div></div>
+            <div class="row"><div>Z-085</div><div>反刺</div><div class="level-b">B</div></div>
+            <div class="row"><div>Z-086</div><div>激光集合体</div><div class="level-s">S</div></div>
+            <div class="row"><div>Z-087</div><div>小船帽</div><div class="level-a">A</div></div>
+            <div class="row"><div>Z-088</div><div>电磁</div><div class="level-b">B+</div></div>
+            <div class="row"><div>Z-089</div><div>弹跳弹簧</div><div class="level-c">C+</div></div>
+            <div class="row"><div>Z-090</div><div>引导箭头</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-091</div><div>施工请注意</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-092</div><div>海中眼</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-093</div><div>无尽虚空</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-094</div><div>焦耳</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-095</div><div>指挥家</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-096</div><div>磁力</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-097</div><div>None</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-098</div><div>炸尸者</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-099</div><div>终末君主</div><div class="level-ss">SS</div></div>
+            <div class="row"><div>Z-100</div><div>The Final Machine</div><div class="level-spp">S++</div></div>
+
+        </div>
+
+        <div class="footer">
+            Цη¡νerse ∀erse · 次元宇宙档案馆 <br> Z序列 · 完整收录
+        </div>
+    </div>
+</body>
+</html>
