@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-069 · 武器装备同化 · Цη¡νerse ∀erse</title>
+    <title data-lang="Z069标题">Z-069 · 武器装备同化 · Цη¡νerse ∀erse</title>
     <style>
         body {
             background-color: #0d1117;
@@ -76,42 +76,80 @@
         ul { padding-left: 20px; line-height: 1.6; }
         li { margin-bottom: 8px; }
     </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const translations = {
+                "Z069标题": "Z-069 · Weapon Equipment Assimilation · Цη¡νerse ∀erse",
+                "返回Z序列": "Back to Z-Sequence",
+                "档案编号": "File No.",
+                "发现机构": "Found By",
+                "当前状态": "Status",
+                "未收容 / 持续监测中": "Uncontained / Monitoring",
+                "现象定义": "Definition",
+                "现象特征": "Features",
+                "触发条件": "Trigger Condition",
+                "同化对象": "Assimilation Target",
+                "同化方式": "Assimilation Method",
+                "同化后战斗力": "Post-Assimilation Combat Power",
+                "代价 / 副作用": "Cost / Side Effects"
+            };
+            const toggleBtn = document.getElementById("lang-toggle");
+            const elements = document.querySelectorAll("[data-lang]");
+            let currentLang = "zh";
+            function toggleLanguage() {
+                currentLang = (currentLang === "zh") ? "en" : "zh";
+                elements.forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (currentLang === "en" && translations[key]) {
+                        el.textContent = translations[key];
+                    } else {
+                        el.textContent = el.getAttribute("data-original");
+                    }
+                });
+                if(toggleBtn) toggleBtn.textContent = (currentLang === "zh") ? "🌍 English" : "🌏 中文";
+            }
+            elements.forEach(el => el.setAttribute("data-original", el.textContent));
+            if(toggleBtn) toggleBtn.addEventListener("click", toggleLanguage);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="header-bar">
-            <h1>⚙️ Z-069 · 武器装备同化</h1>
-            <a href="z-series.html" class="back-btn">← 返回Z序列</a>
+            <h1 data-lang="Z069标题">⚙️ Z-069 · 武器装备同化</h1>
+            <button id="lang-toggle" style="background: transparent; border: 1px solid #58a6ff; color: #58a6ff; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">🌍 English</button>
+            <a href="z-series.html" class="back-btn" data-lang="返回Z序列">← 返回Z序列</a>
         </div>
 
         <div class="archive-box">
             <div class="table-grid">
-                <div class="table-item label">档案编号</div>
+                <div class="table-item label" data-lang="档案编号">档案编号</div>
                 <div class="table-item">Z-069</div>
-                <div class="table-item label">发现机构</div>
+                <div class="table-item label" data-lang="发现机构">发现机构</div>
                 <div class="table-item">疑似 Z 公司（悖论星·Z半区）</div>
-                <div class="table-item label">当前状态</div>
-                <div class="table-item">未收容 / 持续监测中</div>
+                <div class="table-item label" data-lang="当前状态">当前状态</div>
+                <div class="table-item" data-lang="未收容 / 持续监测中">未收容 / 持续监测中</div>
             </div>
         </div>
 
-        <h2 class="phenomenon-title">📖 现象定义</h2>
+        <h2 class="phenomenon-title" data-lang="现象定义">📖 现象定义</h2>
         <div class="archive-box">
             <p>当持有者（尤其是 Z 公司员工或与 Z-001~Z-068和Z-071~Z-99 号装备有关联的人员）在情绪极度不稳定、歇斯底里或生理/心理处于严重应激状态时，其装备可能与持有者发生同化——装备不再只是手持的工具，而是会与持有者的身体、意识与能量发生融合，形成一种临时的、高度危险的新形态。</p>
         </div>
 
-        <h2 class="phenomenon-title">⚠️ 现象特征</h2>
+        <h2 class="phenomenon-title" data-lang="现象特征">⚠️ 现象特征</h2>
         <div class="archive-box">
             <ul>
-                <li><strong>触发条件</strong>：持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。</li>
-                <li><strong>同化对象</strong>：装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。</li>
-                <li><strong>同化方式</strong>：装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。</li>
-                <li><strong>同化后战斗力</strong>：大幅提升，远超该员工正常水平。</li>
-                <li><strong>代价 / 副作用</strong>：持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。</li>
+                <li><strong data-lang="触发条件">触发条件</strong>：持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。</li>
+                <li><strong data-lang="同化对象">同化对象</strong>：装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。</li>
+                <li><strong data-lang="同化方式">同化方式</strong>：装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。</li>
+                <li><strong data-lang="同化后战斗力">同化后战斗力</strong>：大幅提升，远超该员工正常水平。</li>
+                <li><strong data-lang="代价 / 副作用">代价 / 副作用</strong>：持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。</li>
             </ul>
         </div>
 
-        <div class="footer">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
+        <div class="footer" data-lang="次元宇宙档案馆">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
     </div>
 </body>
 </html>

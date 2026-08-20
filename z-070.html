@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-070 · Roachy · Цη¡νerse ∀erse</title>
+    <title data-lang="Z070标题">Z-070 · Roachy · Цη¡νerse ∀erse</title>
     <style>
         body {
             background-color: #0d1117;
@@ -66,32 +66,67 @@
             text-align: center;
         }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const translations = {
+                "Z070标题": "Z-070 · Roachy · Цη¡νerse ∀erse",
+                "返回Z序列": "Back to Z-Sequence",
+                "全名": "Full Name",
+                "编号": "ID",
+                "种族/物种": "Species",
+                "年龄": "Age",
+                "出身/诞生地": "Origin",
+                "性别": "Gender",
+                "未记录": "Unrecorded",
+                "次元宇宙档案馆": "Universe Verse Archive"
+            };
+            const toggleBtn = document.getElementById("lang-toggle");
+            const elements = document.querySelectorAll("[data-lang]");
+            let currentLang = "zh";
+            function toggleLanguage() {
+                currentLang = (currentLang === "zh") ? "en" : "zh";
+                elements.forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (currentLang === "en" && translations[key]) {
+                        el.textContent = translations[key];
+                    } else {
+                        el.textContent = el.getAttribute("data-original");
+                    }
+                });
+                if(toggleBtn) toggleBtn.textContent = (currentLang === "zh") ? "🌍 English" : "🌏 中文";
+            }
+            elements.forEach(el => el.setAttribute("data-original", el.textContent));
+            if(toggleBtn) toggleBtn.addEventListener("click", toggleLanguage);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="header-bar">
-            <h1>🪳 Z-070 · Roachy</h1>
-            <a href="z-series.html" class="back-btn">← 返回Z序列</a>
+            <h1 data-lang="Z070标题">🪳 Z-070 · Roachy</h1>
+            <button id="lang-toggle" style="background: transparent; border: 1px solid #58a6ff; color: #58a6ff; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">🌍 English</button>
+            <a href="z-series.html" class="back-btn" data-lang="返回Z序列">← 返回Z序列</a>
         </div>
 
         <div class="archive-box">
             <div class="table-grid">
-                <div class="table-item label">全名</div>
+                <div class="table-item label" data-lang="全名">全名</div>
                 <div class="table-item">Roachy（Roach + y）</div>
-                <div class="table-item label">编号</div>
+                <div class="table-item label" data-lang="编号">编号</div>
                 <div class="table-item">Z-070</div>
-                <div class="table-item label">种族/物种</div>
+                <div class="table-item label" data-lang="种族/物种">种族/物种</div>
                 <div class="table-item">疑似蟑螂（<strong>最强生物形态</strong>）</div>
-                <div class="table-item label">年龄</div>
+                <div class="table-item label" data-lang="年龄">年龄</div>
                 <div class="table-item">未知</div>
-                <div class="table-item label">出身/诞生地</div>
+                <div class="table-item label" data-lang="出身/诞生地">出身/诞生地</div>
                 <div class="table-item">未知（据说进过 F 宇宙）</div>
-                <div class="table-item label">性别</div>
-                <div class="table-item">未记录</div>
+                <div class="table-item label" data-lang="性别">性别</div>
+                <div class="table-item" data-lang="未记录">未记录</div>
             </div>
         </div>
 
-        <div class="footer">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
+        <div class="footer" data-lang="次元宇宙档案馆">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
     </div>
 </body>
 </html>

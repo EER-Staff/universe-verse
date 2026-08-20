@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>26字母宇宙总表 · Цη¡νerse ∀erse</title>
+    <title data-lang="宇宙总表标题">26字母宇宙总表 · Цη¡νerse ∀erse</title>
     <style>
         body {
             background-color: #0d1117;
@@ -83,236 +83,344 @@
             text-align: center;
         }
     </style>
+
+    <!-- 多语言切换脚本 (包含26个宇宙的翻译) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const translations = {
+                "宇宙总表标题": "26-Letter Universe Table · Цη¡νerse ∀erse",
+                "返回主站": "Back to Home",
+                "字母": "Letter",
+                "宇宙名称": "Universe Name",
+                "类型": "Type",
+                "核心特征": "Core Feature",
+                "状态": "Status",
+                "运行中": "Active",
+                "已关闭": "Closed",
+                "已归档": "Archived",
+                "未知": "Unknown",
+                "始终存在": "Eternal",
+                "已消失": "Disappeared",
+                "次元宇宙档案馆": "Universe Verse Archive",
+                
+                /* 根据中文名补充的英文翻译 */
+                "A宇宙（Adventure）": "Universe A (Adventure)",
+                "B宇宙（后世）": "Universe B (Afterworld)",
+                "C宇宙（Climate）": "Universe C (Climate)",
+                "D宇宙": "Universe D",
+                "E宇宙": "Universe E",
+                "F宇宙（恐惧深渊）": "Universe F (Fear Abyss)",
+                "G宇宙（物理实验室）": "Universe G (Physics Lab)",
+                "H宇宙（喵宇宙）": "Universe H (Meow Universe)",
+                "I宇宙（Initial）": "Universe I (Initial)",
+                "J宇宙（怪物丛林）": "Universe J (Monster Jungle)",
+                "K宇宙（地星K侧）": "Universe K (Earth K-Side)",
+                "L宇宙": "Universe L",
+                "M宇宙（Mix/梦宇宙）": "Universe M (Mix/Dream Universe)",
+                "N宇宙": "Universe N",
+                "O宇宙（O Verse）": "Universe O (O Verse)",
+                "P宇宙": "Universe P",
+                "Q宇宙（Quiet）": "Universe Q (Quiet)",
+                "R宇宙（弹球大冒险）": "Universe R (Pinball Adventure)",
+                "S宇宙（School宇宙）": "Universe S (School Universe)",
+                "T宇宙（地星T侧）": "Universe T (Earth T-Side)",
+                "U宇宙（虚空）": "Universe U (Void)",
+                "V宇宙（Void）": "Universe V (Void)",
+                "W宇宙（武器宇宙）": "Universe W (Weapon Universe)",
+                "X宇宙（异世界）": "Universe X (Otherworld)",
+                "Y宇宙（圣教团）": "Universe Y (Holy Order)",
+                "Z宇宙": "Universe Z",
+                
+                /* 类型的翻译 */
+                "地星层": "Earth Layer",
+                "枢纽层": "Hub Layer",
+                "现实层": "Reality Layer",
+                "想象层": "Imagination Layer",
+                "边界/现实交界": "Border/Reality Interface",
+                "想象/现实交界": "Imagination/Reality Interface",
+                "信仰/现实层": "Faith/Reality Layer",
+                "原始层": "Primordial Layer",
+                
+                /* 特征的翻译 */
+                "9人探险队，连接K与T": "9-Person Expedition, connects K & T",
+                "迷宫、怪物，已关闭（入口）": "Labyrinth, Monsters, Closed (Entrance)",
+                "四季星，季节循环": "Four Seasons Planet, Seasonal Cycle",
+                "文字与词条，《字典大作战》": "Words & Entries, Dictionary War",
+                "悖论星·E半区，种植太空总部": "Paradox Star E-Half, Planting Space HQ",
+                "被认为是黑洞；无人进入后返回": "Considered Black Hole; None have returned",
+                "悖论星·卫星，物理规则可调": "Paradox Star Moon, Adjustable Physics",
+                "强制变猫，绘本画风": "Forced Cat Transformation, Picture Book Style",
+                "初始宇宙，主角贺阳": "Initial Universe, Protagonist He Yang",
+                "怪物随机变异，来源不明": "Monsters mutate randomly, origin unknown",
+                "K小队、凯特科技": "K-Team, Kite Tech",
+                "几何线条，《Line So》": "Geometric Lines, Line So",
+                "灵魂实体化，社会混乱": "Soul Manifestation, Social Chaos",
+                "武器星·N半区，紫色废墟": "Weapon Star N-Half, Purple Ruins",
+                "纯空，无声，由碰撞产生": "Pure Void, Silent, Born from Collision",
+                "笔与涂鸦，文具居民": "Pen & Doodle, Stationery Residents",
+                "绝对无声，声音被吸收": "Absolute Silence, Sounds Absorbed",
+                "弹球机制、轨道、斜坡": "Pinball Mechanics, Rails, Slopes",
+                "学分货币，全世界一所学校": "Credit Currency, Only One School",
+                "Timi主角群（多主角叙事）": "Timi Protagonist Group",
+                "未完成结构、废弃建筑": "Unfinished Structures, Ruins",
+                "先于所有宇宙存在，已消失": "Existed before all universes, Disappeared",
+                "武器大师三兄弟": "Weapon Master Trio",
+                "四季星·秋季区，部长曾穿越": "Four Seasons Autumn Zone, Ministers traveled through",
+                "以Sun、Moon、Star为核心的圣教团": "Holy Order centered on Sun, Moon, Star",
+                "悖论星·Z半区，Z公司暗面支援": "Paradox Star Z-Half, Z Corp Shadow Support"
+            };
+            const toggleBtn = document.getElementById("lang-toggle");
+            const elements = document.querySelectorAll("[data-lang]");
+            let currentLang = "zh";
+            function toggleLanguage() {
+                currentLang = (currentLang === "zh") ? "en" : "zh";
+                elements.forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (currentLang === "en" && translations[key]) {
+                        el.textContent = translations[key];
+                    } else {
+                        el.textContent = el.getAttribute("data-original");
+                    }
+                });
+                if(toggleBtn) toggleBtn.textContent = (currentLang === "zh") ? "🌍 English" : "🌏 中文";
+            }
+            elements.forEach(el => {
+                el.setAttribute("data-original", el.textContent);
+            });
+            if(toggleBtn) toggleBtn.addEventListener("click", toggleLanguage);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="header-bar">
-            <h1>🌌 26字母宇宙总表</h1>
-            <a href="index.html" class="back-btn">← 返回主站</a>
+            <h1 data-lang="宇宙总表标题">🌌 26字母宇宙总表</h1>
+            <button id="lang-toggle" style="background: transparent; border: 1px solid #58a6ff; color: #58a6ff; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">🌍 English</button>
+            <a href="index.html" class="back-btn" data-lang="返回主站">← 返回主站</a>
         </div>
 
         <div class="universe-grid">
             <!-- 表头 -->
             <div class="row header">
-                <div>字母</div>
-                <div>宇宙名称</div>
-                <div>类型</div>
-                <div>核心特征</div>
-                <div>状态</div>
+                <div data-lang="字母">字母</div>
+                <div data-lang="宇宙名称">宇宙名称</div>
+                <div data-lang="类型">类型</div>
+                <div data-lang="核心特征">核心特征</div>
+                <div data-lang="状态">状态</div>
             </div>
 
             <!-- A -->
             <div class="row">
                 <div class="letter">A</div>
-                <div>A宇宙（Adventure）</div>
-                <div>地星层</div>
-                <div>9人探险队，连接K与T</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="A宇宙（Adventure）">A宇宙（Adventure）</div>
+                <div data-lang="地星层">地星层</div>
+                <div data-lang="9人探险队，连接K与T">9人探险队，连接K与T</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- B -->
             <div class="row">
                 <div class="letter">B</div>
-                <div>B宇宙（后世）</div>
-                <div>枢纽层</div>
-                <div>迷宫、怪物，已关闭（入口）</div>
-                <div><span class="status-closed">已关闭</span></div>
+                <div data-lang="B宇宙（后世）">B宇宙（后世）</div>
+                <div data-lang="枢纽层">枢纽层</div>
+                <div data-lang="迷宫、怪物，已关闭（入口）">迷宫、怪物，已关闭（入口）</div>
+                <div><span class="status-closed" data-lang="已关闭">已关闭</span></div>
             </div>
             <!-- C -->
             <div class="row">
                 <div class="letter">C</div>
-                <div>C宇宙（Climate）</div>
-                <div>现实层</div>
-                <div>四季星，季节循环</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="C宇宙（Climate）">C宇宙（Climate）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="四季星，季节循环">四季星，季节循环</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- D -->
             <div class="row">
                 <div class="letter">D</div>
-                <div>D宇宙</div>
-                <div>想象层</div>
-                <div>文字与词条，《字典大作战》</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="D宇宙">D宇宙</div>
+                <div data-lang="想象层">想象层</div>
+                <div data-lang="文字与词条，《字典大作战》">文字与词条，《字典大作战》</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- E -->
             <div class="row">
                 <div class="letter">E</div>
-                <div>E宇宙</div>
-                <div>现实层</div>
-                <div>悖论星·E半区，种植太空总部</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="E宇宙">E宇宙</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="悖论星·E半区，种植太空总部">悖论星·E半区，种植太空总部</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- F -->
             <div class="row">
                 <div class="letter">F</div>
-                <div>F宇宙（恐惧深渊）</div>
-                <div>边界/现实交界</div>
-                <div>被认为是黑洞；无人进入后返回</div>
-                <div><span class="status-unknown">未知</span></div>
+                <div data-lang="F宇宙（恐惧深渊）">F宇宙（恐惧深渊）</div>
+                <div data-lang="边界/现实交界">边界/现实交界</div>
+                <div data-lang="被认为是黑洞；无人进入后返回">被认为是黑洞；无人进入后返回</div>
+                <div><span class="status-unknown" data-lang="未知">未知</span></div>
             </div>
             <!-- G -->
             <div class="row">
                 <div class="letter">G</div>
-                <div>G宇宙（物理实验室）</div>
-                <div>想象/现实交界</div>
-                <div>悖论星·卫星，物理规则可调</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="G宇宙（物理实验室）">G宇宙（物理实验室）</div>
+                <div data-lang="想象/现实交界">想象/现实交界</div>
+                <div data-lang="悖论星·卫星，物理规则可调">悖论星·卫星，物理规则可调</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- H -->
             <div class="row">
                 <div class="letter">H</div>
-                <div>H宇宙（喵宇宙）</div>
-                <div>现实层</div>
-                <div>强制变猫，绘本画风</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="H宇宙（喵宇宙）">H宇宙（喵宇宙）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="强制变猫，绘本画风">强制变猫，绘本画风</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- I -->
             <div class="row">
                 <div class="letter">I</div>
-                <div>I宇宙（Initial）</div>
-                <div>现实层</div>
-                <div>初始宇宙，主角贺阳</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="I宇宙（Initial）">I宇宙（Initial）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="初始宇宙，主角贺阳">初始宇宙，主角贺阳</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- J -->
             <div class="row">
                 <div class="letter">J</div>
-                <div>J宇宙（怪物丛林）</div>
-                <div>想象/现实交界</div>
-                <div>怪物随机变异，来源不明</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="J宇宙（怪物丛林）">J宇宙（怪物丛林）</div>
+                <div data-lang="想象/现实交界">想象/现实交界</div>
+                <div data-lang="怪物随机变异，来源不明">怪物随机变异，来源不明</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- K -->
             <div class="row">
                 <div class="letter">K</div>
-                <div>K宇宙（地星K侧）</div>
-                <div>地星层</div>
-                <div>K小队、凯特科技</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="K宇宙（地星K侧）">K宇宙（地星K侧）</div>
+                <div data-lang="地星层">地星层</div>
+                <div data-lang="K小队、凯特科技">K小队、凯特科技</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- L -->
             <div class="row">
                 <div class="letter">L</div>
-                <div>L宇宙</div>
-                <div>想象层</div>
-                <div>几何线条，《Line So》</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="L宇宙">L宇宙</div>
+                <div data-lang="想象层">想象层</div>
+                <div data-lang="几何线条，《Line So》">几何线条，《Line So》</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- M -->
             <div class="row">
                 <div class="letter">M</div>
-                <div>M宇宙（Mix/梦宇宙）</div>
-                <div>现实层</div>
-                <div>灵魂实体化，社会混乱</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="M宇宙（Mix/梦宇宙）">M宇宙（Mix/梦宇宙）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="灵魂实体化，社会混乱">灵魂实体化，社会混乱</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- N -->
             <div class="row">
                 <div class="letter">N</div>
-                <div>N宇宙</div>
-                <div>现实层</div>
-                <div>武器星·N半区，紫色废墟</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="N宇宙">N宇宙</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="武器星·N半区，紫色废墟">武器星·N半区，紫色废墟</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- O -->
             <div class="row">
                 <div class="letter">O</div>
-                <div>O宇宙（O Verse）</div>
-                <div>边界层</div>
-                <div>纯空，无声，由碰撞产生</div>
-                <div><span class="status-eternal">始终存在</span></div>
+                <div data-lang="O宇宙（O Verse）">O宇宙（O Verse）</div>
+                <div data-lang="边界层">边界层</div>
+                <div data-lang="纯空，无声，由碰撞产生">纯空，无声，由碰撞产生</div>
+                <div><span class="status-eternal" data-lang="始终存在">始终存在</span></div>
             </div>
             <!-- P -->
             <div class="row">
                 <div class="letter">P</div>
-                <div>P宇宙</div>
-                <div>想象层</div>
-                <div>笔与涂鸦，文具居民</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="P宇宙">P宇宙</div>
+                <div data-lang="想象层">想象层</div>
+                <div data-lang="笔与涂鸦，文具居民">笔与涂鸦，文具居民</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- Q -->
             <div class="row">
                 <div class="letter">Q</div>
-                <div>Q宇宙（Quiet）</div>
-                <div>边界层</div>
-                <div>绝对无声，声音被吸收</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="Q宇宙（Quiet）">Q宇宙（Quiet）</div>
+                <div data-lang="边界层">边界层</div>
+                <div data-lang="绝对无声，声音被吸收">绝对无声，声音被吸收</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- R -->
             <div class="row">
                 <div class="letter">R</div>
-                <div>R宇宙（弹球大冒险）</div>
-                <div>想象层</div>
-                <div>弹球机制、轨道、斜坡</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="R宇宙（弹球大冒险）">R宇宙（弹球大冒险）</div>
+                <div data-lang="想象层">想象层</div>
+                <div data-lang="弹球机制、轨道、斜坡">弹球机制、轨道、斜坡</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- S -->
             <div class="row">
                 <div class="letter">S</div>
-                <div>S宇宙（School宇宙）</div>
-                <div>现实层</div>
-                <div>学分货币，全世界一所学校</div>
-                <div><span class="status-archived">已归档</span></div>
+                <div data-lang="S宇宙（School宇宙）">S宇宙（School宇宙）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="学分货币，全世界一所学校">学分货币，全世界一所学校</div>
+                <div><span class="status-archived" data-lang="已归档">已归档</span></div>
             </div>
             <!-- T -->
             <div class="row">
                 <div class="letter">T</div>
-                <div>T宇宙（地星T侧）</div>
-                <div>地星层</div>
-                <div>Timi主角群（多主角叙事）</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="T宇宙（地星T侧）">T宇宙（地星T侧）</div>
+                <div data-lang="地星层">地星层</div>
+                <div data-lang="Timi主角群（多主角叙事）">Timi主角群（多主角叙事）</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- U -->
             <div class="row">
                 <div class="letter">U</div>
-                <div>U宇宙（虚空）</div>
-                <div>边界/现实交界</div>
-                <div>未完成结构、废弃建筑</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="U宇宙（虚空）">U宇宙（虚空）</div>
+                <div data-lang="边界/现实交界">边界/现实交界</div>
+                <div data-lang="未完成结构、废弃建筑">未完成结构、废弃建筑</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- V -->
             <div class="row">
                 <div class="letter">V</div>
-                <div>V宇宙（Void）</div>
-                <div>原始层</div>
-                <div>先于所有宇宙存在，已消失</div>
-                <div><span class="status-closed">已消失</span></div>
+                <div data-lang="V宇宙（Void）">V宇宙（Void）</div>
+                <div data-lang="原始层">原始层</div>
+                <div data-lang="先于所有宇宙存在，已消失">先于所有宇宙存在，已消失</div>
+                <div><span class="status-closed" data-lang="已消失">已消失</span></div>
             </div>
             <!-- W -->
             <div class="row">
                 <div class="letter">W</div>
-                <div>W宇宙（武器宇宙）</div>
-                <div>现实层</div>
-                <div>武器大师三兄弟</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="W宇宙（武器宇宙）">W宇宙（武器宇宙）</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="武器大师三兄弟">武器大师三兄弟</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- X -->
             <div class="row">
                 <div class="letter">X</div>
-                <div>X宇宙（异世界）</div>
-                <div>现实/交界层</div>
-                <div>四季星·秋季区，部长曾穿越</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="X宇宙（异世界）">X宇宙（异世界）</div>
+                <div data-lang="现实/交界层">现实/交界层</div>
+                <div data-lang="四季星·秋季区，部长曾穿越">四季星·秋季区，部长曾穿越</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- Y -->
             <div class="row">
                 <div class="letter">Y</div>
-                <div>Y宇宙（圣教团）</div>
-                <div>信仰/现实层</div>
-                <div>以Sun、Moon、Star为核心的圣教团</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="Y宇宙（圣教团）">Y宇宙（圣教团）</div>
+                <div data-lang="信仰/现实层">信仰/现实层</div>
+                <div data-lang="以Sun、Moon、Star为核心的圣教团">以Sun、Moon、Star为核心的圣教团</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
             <!-- Z -->
             <div class="row">
                 <div class="letter">Z</div>
-                <div>Z宇宙</div>
-                <div>现实层</div>
-                <div>悖论星·Z半区，Z公司暗面支援</div>
-                <div><span class="status-running">运行中</span></div>
+                <div data-lang="Z宇宙">Z宇宙</div>
+                <div data-lang="现实层">现实层</div>
+                <div data-lang="悖论星·Z半区，Z公司暗面支援">悖论星·Z半区，Z公司暗面支援</div>
+                <div><span class="status-running" data-lang="运行中">运行中</span></div>
             </div>
 
         </div>
 
-        <div class="footer">
+        <div class="footer" data-lang="次元宇宙档案馆">
             Цη¡νerse ∀erse · 次元宇宙档案馆
         </div>
     </div>
