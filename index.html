@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цη¡νerse ∀erse · 次元宇宙档案馆</title>
+    <title data-lang="主页标题">Цη¡νerse ∀erse · 次元宇宙档案馆</title>
     <style>
         body {
             background-color: #0d1117;
@@ -88,15 +88,15 @@
         }
     </style>
 
-    <!-- 多语言切换脚本 (内联版本) -->
+    <!-- 多语言切换脚本 (最终优化版) -->
     <script>
-                document.addEventListener("DOMContentLoaded", function() {
-            // 翻译字典 (中文 -> 英文)
+        document.addEventListener("DOMContentLoaded", function() {
             const translations = {
+                "主页标题": "Цη¡νerse ∀erse · Multiverse Archive",
+                "次元宇宙 · 全字母宇宙总表": "Universe Verse · Multiverse Archive",
                 "26字母宇宙总表": "26-Letter Universe Table",
                 "Z序列怪物图鉴": "Z-Sequence Bestiary",
                 "下载世界观原稿 (.txt)": "Download Worldview Draft (.txt)",
-                "次元宇宙 · 全字母宇宙总表": "Universe Verse · Multiverse Archive",
                 "欢迎辞": "Welcome to the Cross-Dimensional Archive. Here you will find complete settings of 26 letter universes, Planting Space Company, Z-Sequence monsters, and countless characters.",
                 "维护信息": "This site is maintained by EER-Staff. Data originates from the Universe Verse worldview.",
                 "作者：": "Author: ",
@@ -104,12 +104,13 @@
                 "B站：": "Bilibili: ",
                 "请支持我们的作品！": "Please support our work!",
                 "下载：": "Download: ",
+                "开始": "Start",
                 "邮箱二号：": "Email2: ",
                 "反馈：": "Feedback: ",
                 "点击提出建议": "Submit Suggestion",
-                "开始": "Start",
-                "本作品采用": "This work is licensed under",
-                "许可协议。": "license."
+                "本作品采用": "This work is licensed under the",
+                "许可协议。": "license.",
+                "CC0 1.0 通用": "CC0 1.0 Universal"
             };
 
             const toggleBtn = document.getElementById("lang-toggle");
@@ -144,8 +145,8 @@
             <span class="subtitle" data-lang="次元宇宙 · 全字母宇宙总表">次元宇宙 · 全字母宇宙总表</span>
         </h1>
         
-        <p>欢迎来到跨次元档案馆。这里存放着26个字母宇宙、种植太空公司、Z序列怪物与无数角色的完整设定。</p>
-        <p style="font-size: 0.9em; color: #8b949e;">此站点由 <strong>EER-Staff</strong> 维护，数据源于 <strong>Universe Verse 世界观</strong>。</p>
+        <p data-lang="欢迎辞">欢迎来到跨次元档案馆。这里存放着26个字母宇宙、种植太空公司、Z序列怪物与无数角色的完整设定。</p>
+        <p style="font-size: 0.9em; color: #8b949e;" data-lang="维护信息">此站点由 <strong>EER-Staff</strong> 维护，数据源于 <strong>Universe Verse 世界观</strong>。</p>
 
         <div class="nav-links">
             <a href="universes.html" data-lang="26字母宇宙总表" class="lang-item">26字母宇宙总表</a>
@@ -170,7 +171,7 @@
                 <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
                     <div>
                         <span data-lang="下载：" style="color: #8b949e;">下载：</span>
-                        <a href="https://pan.xunlei.com/s/VP-O-88j_wYm3qdMNYVSbaAcA1?pwd=4n9g#" target="_blank" style="color: #58a6ff;">开始</a>
+                        <a href="https://pan.xunlei.com/s/VP-O-88j_wYm3qdMNYVSbaAcA1?pwd=4n9g#" target="_blank" style="color: #58a6ff;" data-lang="开始">开始</a>
                     </div>
                     <div>
                         <span data-lang="邮箱二号：" style="color: #8b949e;">邮箱二号：</span>
@@ -178,13 +179,13 @@
                     </div>
                     <div>
                         <span data-lang="反馈：" style="color: #8b949e;">反馈：</span>
-                        <a href="mailto:2637662619@qq.com?subject=关于《Цη¡νerse ∀erse》的反馈" style="color: #58a6ff; text-decoration: none;">点击提出建议</a>
+                        <a href="mailto:2637662619@qq.com?subject=关于《Цη¡νerse ∀erse》的反馈" style="color: #58a6ff; text-decoration: none;" data-lang="点击提出建议">点击提出建议</a>
                     </div>
                 </div>
             </div>
 
             <div style="margin-top: 10px; font-size: 0.75em; color: #8b949e;">
-                <span data-lang="本作品采用">本作品采用</span> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 通用</a> <span data-lang="许可协议。">许可协议。</span>
+                <span data-lang="本作品采用">本作品采用</span> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" style="color: #58a6ff;" data-lang="CC0 1.0 通用">CC0 1.0 通用</a> <span data-lang="许可协议。">许可协议。</span>
             </div>
         </div>
     </div>

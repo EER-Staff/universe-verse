@@ -92,7 +92,17 @@
                 "同化对象": "Assimilation Target",
                 "同化方式": "Assimilation Method",
                 "同化后战斗力": "Post-Assimilation Combat Power",
-                "代价 / 副作用": "Cost / Side Effects"
+                "代价 / 副作用": "Cost / Side Effects",
+                
+                /* 新增的详细翻译 */
+                "疑似 Z 公司（悖论星·Z半区）": "Suspected Z Corp (Paradox Star Z-Half)",
+
+                "当持有者（尤其是 Z 公司员工或与 Z-001~Z-068和Z-071~Z-99 号装备有关联的人员）在情绪极度不稳定、歇斯底里或生理/心理处于严重应激状态时，其装备可能与持有者发生同化——装备不再只是手持的工具，而是会与持有者的身体、意识与能量发生融合，形成一种临时的、高度危险的新形态。": "When the holder (especially Z Corp employees or personnel associated with Z-001~Z-068 and Z-071~Z-99 equipment) is in a state of extreme emotional instability, hysteria, or severe physiological/psychological stress, their equipment may assimilate with them — the equipment is no longer just a tool held in hand, but fuses with the holder's body, consciousness, and energy, forming a temporary, highly dangerous new form.",
+                "持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。": "The holder's emotional breakdown (extreme fear, anger, anxiety, etc.); or being in an irreversible life-or-death state.",
+                "装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。": "The equipment itself, mostly derived from the Z-001 ~ Z-068 and Z-071~Z-99 sequences.",
+                "装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。": "The equipment is no longer 'worn' or 'held'; it integrates with the holder's muscles, bones, nerves, and even consciousness.",
+                "大幅提升，远超该员工正常水平。": "Significantly enhanced, far exceeding the employee's normal level.",
+                "持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。": "The holder has a high probability of losing self-awareness, or falling into a sustained unstable mental state (irritable, manic, unable to distinguish friend from foe)."
             };
             const toggleBtn = document.getElementById("lang-toggle");
             const elements = document.querySelectorAll("[data-lang]");
@@ -127,7 +137,7 @@
                 <div class="table-item label" data-lang="档案编号">档案编号</div>
                 <div class="table-item">Z-069</div>
                 <div class="table-item label" data-lang="发现机构">发现机构</div>
-                <div class="table-item">疑似 Z 公司（悖论星·Z半区）</div>
+                <div class="table-item" data-lang="疑似 Z 公司（悖论星·Z半区）">疑似 Z 公司（悖论星·Z半区）</div>
                 <div class="table-item label" data-lang="当前状态">当前状态</div>
                 <div class="table-item" data-lang="未收容 / 持续监测中">未收容 / 持续监测中</div>
             </div>
@@ -135,17 +145,17 @@
 
         <h2 class="phenomenon-title" data-lang="现象定义">📖 现象定义</h2>
         <div class="archive-box">
-            <p>当持有者（尤其是 Z 公司员工或与 Z-001~Z-068和Z-071~Z-99 号装备有关联的人员）在情绪极度不稳定、歇斯底里或生理/心理处于严重应激状态时，其装备可能与持有者发生同化——装备不再只是手持的工具，而是会与持有者的身体、意识与能量发生融合，形成一种临时的、高度危险的新形态。</p>
+            <p data-lang="当持有者（尤其是 Z 公司员工或与 Z-001~Z-068和Z-071~Z-99 号装备有关联的人员）在情绪极度不稳定、歇斯底里或生理/心理处于严重应激状态时，其装备可能与持有者发生同化——装备不再只是手持的工具，而是会与持有者的身体、意识与能量发生融合，形成一种临时的、高度危险的新形态。">当持有者（尤其是 Z 公司员工或与 Z-001~Z-068和Z-071~Z-99 号装备有关联的人员）在情绪极度不稳定、歇斯底里或生理/心理处于严重应激状态时，其装备可能与持有者发生同化——装备不再只是手持的工具，而是会与持有者的身体、意识与能量发生融合，形成一种临时的、高度危险的新形态。</p>
         </div>
 
         <h2 class="phenomenon-title" data-lang="现象特征">⚠️ 现象特征</h2>
         <div class="archive-box">
             <ul>
-                <li><strong data-lang="触发条件">触发条件</strong>：持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。</li>
-                <li><strong data-lang="同化对象">同化对象</strong>：装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。</li>
-                <li><strong data-lang="同化方式">同化方式</strong>：装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。</li>
-                <li><strong data-lang="同化后战斗力">同化后战斗力</strong>：大幅提升，远超该员工正常水平。</li>
-                <li><strong data-lang="代价 / 副作用">代价 / 副作用</strong>：持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。</li>
+                <li><strong data-lang="触发条件">触发条件</strong>：<span data-lang="持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。">持有者情绪崩溃（极度恐惧、愤怒、焦虑等）；或处于不可逆的生死边缘状态。</span></li>
+                <li><strong data-lang="同化对象">同化对象</strong>：<span data-lang="装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。">装备本身，大多源自 Z-001 ~ Z-068 和 Z-071~Z-99 序列。</span></li>
+                <li><strong data-lang="同化方式">同化方式</strong>：<span data-lang="装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。">装备不再是“佩戴”或“握持”的，它会与持有者的肌肉、骨骼、神经甚至意识进行结合。</span></li>
+                <li><strong data-lang="同化后战斗力">同化后战斗力</strong>：<span data-lang="大幅提升，远超该员工正常水平。">大幅提升，远超该员工正常水平。</span></li>
+                <li><strong data-lang="代价 / 副作用">代价 / 副作用</strong>：<span data-lang="持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。">持有者极大概率丧失自我意识，或陷入持续不稳定的精神状态（易怒、狂躁、无法分辨敌我）。</span></li>
             </ul>
         </div>
 
