@@ -46,7 +46,7 @@
             border-top: 1px solid #30363d;
             padding-top: 30px;
         }
-        .nav-links a {
+        .nav-links a, .nav-links button {
             color: #58a6ff;
             text-decoration: none;
             font-weight: 500;
@@ -56,11 +56,22 @@
             transition: 0.2s;
             display: block;
             text-align: center;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1em;
         }
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links button:hover {
             background-color: #161b22;
             border-color: #58a6ff;
             transform: translateY(-2px);
+        }
+        #lang-toggle {
+            border-color: #f0883e;
+            color: #f0883e;
+        }
+        #lang-toggle:hover {
+            border-color: #58a6ff;
+            color: #58a6ff;
         }
         .footer {
             margin-top: 60px;
@@ -71,57 +82,107 @@
             padding-top: 20px;
             width: 100%;
         }
+        .footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
     </style>
+
+    <!-- 多语言切换脚本 (内联版本) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 翻译字典 (中文 -> 英文)
+            const translations = {
+                "26字母宇宙总表": "26-Letter Universe Table",
+                "Z序列怪物图鉴": "Z-Sequence Bestiary",
+                "下载世界观原稿 (.txt)": "Download Worldview Draft (.txt)",
+                "次元宇宙 · 全字母宇宙总表": "Universe Verse · Multiverse Archive",
+                "作者：": "Author: ",
+                "邮箱：": "Email: ",
+                "B站：": "Bilibili: ",
+                "请支持我们的作品！": "Please support our work!",
+                "下载：": "Download: ",
+                "邮箱二号：": "Email2: ",
+                "反馈：": "Feedback: ",
+                "点击提出建议": "Submit Suggestion",
+                "开始": "Start",
+                "本作品采用": "This work is licensed under",
+                "许可协议。": "license."
+            };
+
+            const toggleBtn = document.getElementById("lang-toggle");
+            const elements = document.querySelectorAll("[data-lang]");
+            let currentLang = "zh";
+
+            function toggleLanguage() {
+                currentLang = (currentLang === "zh") ? "en" : "zh";
+                elements.forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (currentLang === "en" && translations[key]) {
+                        el.textContent = translations[key];
+                    } else {
+                        el.textContent = el.getAttribute("data-original");
+                    }
+                });
+                toggleBtn.textContent = (currentLang === "zh") ? "🌍 English" : "🌏 中文";
+            }
+
+            elements.forEach(el => {
+                el.setAttribute("data-original", el.textContent);
+            });
+
+            toggleBtn.addEventListener("click", toggleLanguage);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>
             Цη¡νerse ∀erse
-            <span class="subtitle">次元宇宙 · 全字母宇宙总表</span>
+            <span class="subtitle" data-lang="次元宇宙 · 全字母宇宙总表">次元宇宙 · 全字母宇宙总表</span>
         </h1>
         
         <p>欢迎来到跨次元档案馆。这里存放着26个字母宇宙、种植太空公司、Z序列怪物与无数角色的完整设定。</p>
         <p style="font-size: 0.9em; color: #8b949e;">此站点由 <strong>EER-Staff</strong> 维护，数据源于 <strong>Universe Verse 世界观</strong>。</p>
 
         <div class="nav-links">
-            <!-- 把原来那行 <a href="#">26字母宇宙总表...</a> 删掉，换成这一句： -->
-            <a href="universes.html">🌌 26字母宇宙总表（点击进入）</a>
-            <a href="z-series.html">👾 Z序列怪物图鉴（点击进入）</a>
-            <a href="#">🌱 种植太空 · 员工装备表（传送门建设中）</a>
-            <a href="Цη¡νerse ∀erse.txt" download>📥 下载设定集</a>
+            <a href="universes.html" data-lang="26字母宇宙总表" class="lang-item">26字母宇宙总表</a>
+            <a href="z-series.html" data-lang="Z序列怪物图鉴" class="lang-item">Z序列怪物图鉴</a>
+            <a href="Universe_Verse.txt" download data-lang="下载世界观原稿 (.txt)" class="lang-item">下载世界观原稿 (.txt)</a>
+            <button id="lang-toggle">🌍 English</button>
         </div>
 
         <div class="footer">
             <div style="margin-bottom: 10px;">
-                Цη¡νerse ∀erse · 次元宇宙档案馆<br>
-                作者：EER-Staff（EER员工）
+                Цη¡νerse ∀erse · <span data-lang="次元宇宙 · 全字母宇宙总表">次元宇宙 · 全字母宇宙总表</span><br>
+                <span data-lang="作者：">作者：</span>EER-Staff（EER员工）
             </div>
             
             <div style="font-size: 0.95em; line-height: 1.8; color: #c9d1d9;">
-                📧 邮箱：<a href="mailto:2637662619@qq.com" style="color: #58a6ff; text-decoration: none;">2637662619@qq.com</a><br>
-                📺 B站：<a href="https://space.bilibili.com/3546707451185635" target="_blank" style="color: #58a6ff; text-decoration: none;">@EER员工</a>
+                📧 <span data-lang="邮箱：">邮箱：</span><a href="mailto:2637662619@qq.com" style="color: #58a6ff;">2637662619@qq.com</a><br>
+                📺 <span data-lang="B站：">B站：</span><a href="https://space.bilibili.com/3546707451185635" target="_blank" style="color: #58a6ff;">@EER员工</a>
             </div>
 
             <div style="margin: 15px 0; border-top: 1px solid #30363d; padding-top: 15px; font-size: 0.95em; color: #c9d1d9;">
-                <p style="font-weight: bold; margin-bottom: 8px;">请支持我们的作品！</p>
+                <p style="font-weight: bold; margin-bottom: 8px;" data-lang="请支持我们的作品！">请支持我们的作品！</p>
                 <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
                     <div>
-                        <span style="color: #8b949e;">下载：</span>
-                        <a href="https://pan.xunlei.com/s/VP-O-88j_wYm3qdMNYVSbaAcA1?pwd=4n9g#" target="_blank" style="color: #58a6ff; text-decoration: none;">开始</a>
+                        <span data-lang="下载：" style="color: #8b949e;">下载：</span>
+                        <a href="https://pan.xunlei.com/s/VP-O-88j_wYm3qdMNYVSbaAcA1?pwd=4n9g#" target="_blank" style="color: #58a6ff;">开始</a>
                     </div>
                     <div>
-                        <span style="color: #8b949e;">邮箱二号：</span>
-                        <a href="mailto:449853748@qq.com" style="color: #58a6ff; text-decoration: none;">449853748@qq.com</a>
+                        <span data-lang="邮箱二号：" style="color: #8b949e;">邮箱二号：</span>
+                        <a href="mailto:449853748@qq.com" style="color: #58a6ff;">449853748@qq.com</a>
                     </div>
                     <div>
-                        <span style="color: #8b949e;">反馈：</span>
+                        <span data-lang="反馈：" style="color: #8b949e;">反馈：</span>
                         <a href="mailto:2637662619@qq.com?subject=关于《Цη¡νerse ∀erse》的反馈" style="color: #58a6ff; text-decoration: none;">点击提出建议</a>
                     </div>
                 </div>
             </div>
 
             <div style="margin-top: 10px; font-size: 0.75em; color: #8b949e;">
-                本作品采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" style="color: #58a6ff;">CC0 1.0 通用</a> 许可协议。
+                <span data-lang="本作品采用">本作品采用</span> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 通用</a> <span data-lang="许可协议。">许可协议。</span>
             </div>
         </div>
     </div>
