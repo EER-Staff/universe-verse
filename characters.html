@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="人物合集标题">人物合集 · Цη¡νerse ∀erse</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #f0f6fc;
+            margin: 0;
+        }
+        .back-btn {
+            color: #58a6ff;
+            text-decoration: none;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #161b22;
+            border-color: #58a6ff;
+        }
+
+        /* 宇宙入口卡片 */
+        .universe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .universe-card {
+            display: block;
+            background-color: #161b22;
+            border: 1px solid #21262d;
+            border-radius: 8px;
+            padding: 20px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+        .universe-card:hover {
+            border-color: #58a6ff;
+            background-color: #1c2333;
+            transform: translateY(-2px);
+        }
+        .uni-letter {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #f0f6fc;
+        }
+        .uni-name {
+            font-size: 1.1em;
+            margin-top: 5px;
+            color: #f0f6fc;
+        }
+        .uni-desc {
+            font-size: 0.85em;
+            color: #8b949e;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            font-size: 0.8em;
+            color: #8b949e;
+            text-align: center;
+        }
+    </style>
+
+    <!-- 多语言切换脚本 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const translations = {
+                "人物合集标题": "Character Collection · Цη¡νerse ∀erse",
+                "返回主站": "Back to Home",
+                "选择宇宙提示": "Select a universe to view the characters residing there.",
+                "次元宇宙档案馆": "Universe Verse Archive",
+                "种植太空公司总部 · 20部门": "Planting Space HQ · 20 Departments",
+                "小布 · 咪咪 · 哈哈 · 布丁": "Bubu · Mimi · Haha · Pudding",
+                "贺络泽 · 何思程 · 魔佳喵": "Heluoze · Hesicheng · Mojiamiao",
+                "Sun · Moon · Star · Shine · Ana": "Sun · Moon · Star · Shine · Ana",
+                "K小队 · 凯特科技": "K-Team · Kaiter Tech", /* 此处已修正 */
+                "武器大师三兄弟": "Weapon Master Trio",
+                "王德法 · 多手 · Zona": "Wang Defa · Duoshou · Zona",
+                "已归档 · 教导主任 · Mr. Macris": "Archived · Dean · Mr. Macris"
+            };
+
+            const toggleBtn = document.getElementById("lang-toggle");
+            const elements = document.querySelectorAll("[data-lang]");
+            let currentLang = "zh";
+
+            function toggleLanguage() {
+                currentLang = (currentLang === "zh") ? "en" : "zh";
+                elements.forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (currentLang === "en" && translations[key]) {
+                        el.textContent = translations[key];
+                    } else {
+                        el.textContent = el.getAttribute("data-original");
+                    }
+                });
+                if(toggleBtn) toggleBtn.textContent = (currentLang === "zh") ? "🌍 English" : "🌏 中文";
+            }
+
+            elements.forEach(el => {
+                el.setAttribute("data-original", el.textContent);
+            });
+
+            if(toggleBtn) toggleBtn.addEventListener("click", toggleLanguage);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <h1 data-lang="人物合集标题">👥 人物合集</h1>
+            <button id="lang-toggle" style="background: transparent; border: 1px solid #58a6ff; color: #58a6ff; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8em;">🌍 English</button>
+            <a href="index.html" class="back-btn" data-lang="返回主站">← 返回主站</a>
+        </div>
+
+        <p style="color: #8b949e; margin-bottom: 20px;" data-lang="选择宇宙提示">选择一个宇宙，查看其中居住与战斗的人物。</p>
+
+        <div class="universe-grid">
+            
+            <!-- E宇宙 -->
+            <a href="e-universe.html" class="universe-card">
+                <div class="uni-letter">E</div>
+                <div class="uni-name">E宇宙</div>
+                <div class="uni-desc" data-lang="种植太空公司总部 · 20部门">种植太空公司总部 · 20部门</div>
+            </a>
+
+            <!-- H宇宙 -->
+            <a href="h-universe.html" class="universe-card">
+                <div class="uni-letter">H</div>
+                <div class="uni-name">H宇宙（喵宇宙）</div>
+                <div class="uni-desc" data-lang="小布 · 咪咪 · 哈哈 · 布丁">小布 · 咪咪 · 哈哈 · 布丁</div>
+            </a>
+
+            <!-- M宇宙 -->
+            <a href="m-universe.html" class="universe-card">
+                <div class="uni-letter">M</div>
+                <div class="uni-name">M宇宙（Mix/梦宇宙）</div>
+                <div class="uni-desc" data-lang="贺络泽 · 何思程 · 魔佳喵">贺络泽 · 何思程 · 魔佳喵</div>
+            </a>
+
+            <!-- Y宇宙 -->
+            <a href="y-universe.html" class="universe-card">
+                <div class="uni-letter">Y</div>
+                <div class="uni-name">Y宇宙（圣教团）</div>
+                <div class="uni-desc" data-lang="Sun · Moon · Star · Shine · Ana">Sun · Moon · Star · Shine · Ana</div>
+            </a>
+
+            <!-- K宇宙 -->
+            <a href="k-universe.html" class="universe-card">
+                <div class="uni-letter">K</div>
+                <div class="uni-name">K宇宙（地星K侧）</div>
+                <div class="uni-desc" data-lang="K小队 · 凯特科技">K小队 · 凯特科技</div>
+            </a>
+
+            <!-- W宇宙 -->
+            <a href="w-universe.html" class="universe-card">
+                <div class="uni-letter">W</div>
+                <div class="uni-name">W宇宙（武器宇宙）</div>
+                <div class="uni-desc" data-lang="武器大师三兄弟">武器大师三兄弟</div>
+            </a>
+
+            <!-- N宇宙 -->
+            <a href="n-universe.html" class="universe-card">
+                <div class="uni-letter">N</div>
+                <div class="uni-name">N宇宙</div>
+                <div class="uni-desc" data-lang="王德法 · 多手 · Zona">王德法 · 多手 · Zona</div>
+            </a>
+
+            <!-- S宇宙 -->
+            <a href="s-universe.html" class="universe-card">
+                <div class="uni-letter">S</div>
+                <div class="uni-name">S宇宙（School宇宙）</div>
+                <div class="uni-desc" data-lang="已归档 · 教导主任 · Mr. Macris">已归档 · 教导主任 · Mr. Macris</div>
+            </a>
+
+        </div>
+
+        <div class="footer" data-lang="次元宇宙档案馆">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
+    </div>
+</body>
+</html>
