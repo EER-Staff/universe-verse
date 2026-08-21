@@ -47,7 +47,6 @@
             border-color: #58a6ff;
         }
 
-        /* 宇宙入口卡片 */
         .universe-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -102,11 +101,22 @@
                 "返回主站": "Back to Home",
                 "选择宇宙提示": "Select a universe to view the characters residing there.",
                 "次元宇宙档案馆": "Universe Verse Archive",
+                "E宇宙": "Universe E",
+                "H宇宙（喵宇宙）": "Universe H (Meow Universe)",
+                "M宇宙（Mix/梦宇宙）": "Universe M (Mix/Dream Universe)",
+                "Y宇宙（圣教团）": "Universe Y (Holy Order)",
+                "K宇宙（地星K侧）": "Universe K (Earth K-Side)",
+                "W宇宙（武器宇宙）": "Universe W (Weapon Universe)",
+                "N宇宙": "Universe N",
+                "S宇宙（School宇宙）": "Universe S (School Universe)",
                 "种植太空公司总部 · 20部门": "Planting Space HQ · 20 Departments",
                 "小布 · 咪咪 · 哈哈 · 布丁": "Bubu · Mimi · Haha · Pudding",
-                "贺络泽 · 何思程 · 魔佳喵": "Heluoze · Hesicheng · Mojiamiao",
+                
+                /* 修正了M宇宙人物名的翻译 */
+                "贺络泽 · 何思程 · 魔佳喵": "He Luoze · He Sicheng · Magi miao",
+                
                 "Sun · Moon · Star · Shine · Ana": "Sun · Moon · Star · Shine · Ana",
-                "K小队 · 凯特科技": "K-Team · Kaiter Tech", /* 此处已修正 */
+                "K小队 · 凯特科技": "K-Team · Kaiter Tech",
                 "武器大师三兄弟": "Weapon Master Trio",
                 "王德法 · 多手 · Zona": "Wang Defa · Duoshou · Zona",
                 "已归档 · 教导主任 · Mr. Macris": "Archived · Dean · Mr. Macris"
@@ -148,63 +158,61 @@
         <p style="color: #8b949e; margin-bottom: 20px;" data-lang="选择宇宙提示">选择一个宇宙，查看其中居住与战斗的人物。</p>
 
         <div class="universe-grid">
-            
             <!-- E宇宙 -->
             <a href="e-universe.html" class="universe-card">
                 <div class="uni-letter">E</div>
-                <div class="uni-name">E宇宙</div>
+                <div class="uni-name" data-lang="E宇宙">E宇宙</div>
                 <div class="uni-desc" data-lang="种植太空公司总部 · 20部门">种植太空公司总部 · 20部门</div>
             </a>
 
             <!-- H宇宙 -->
             <a href="h-universe.html" class="universe-card">
                 <div class="uni-letter">H</div>
-                <div class="uni-name">H宇宙（喵宇宙）</div>
+                <div class="uni-name" data-lang="H宇宙（喵宇宙）">H宇宙（喵宇宙）</div>
                 <div class="uni-desc" data-lang="小布 · 咪咪 · 哈哈 · 布丁">小布 · 咪咪 · 哈哈 · 布丁</div>
             </a>
 
             <!-- M宇宙 -->
             <a href="m-universe.html" class="universe-card">
                 <div class="uni-letter">M</div>
-                <div class="uni-name">M宇宙（Mix/梦宇宙）</div>
+                <div class="uni-name" data-lang="M宇宙（Mix/梦宇宙）">M宇宙（Mix/梦宇宙）</div>
                 <div class="uni-desc" data-lang="贺络泽 · 何思程 · 魔佳喵">贺络泽 · 何思程 · 魔佳喵</div>
             </a>
 
             <!-- Y宇宙 -->
             <a href="y-universe.html" class="universe-card">
                 <div class="uni-letter">Y</div>
-                <div class="uni-name">Y宇宙（圣教团）</div>
+                <div class="uni-name" data-lang="Y宇宙（圣教团）">Y宇宙（圣教团）</div>
                 <div class="uni-desc" data-lang="Sun · Moon · Star · Shine · Ana">Sun · Moon · Star · Shine · Ana</div>
             </a>
 
             <!-- K宇宙 -->
             <a href="k-universe.html" class="universe-card">
                 <div class="uni-letter">K</div>
-                <div class="uni-name">K宇宙（地星K侧）</div>
+                <div class="uni-name" data-lang="K宇宙（地星K侧）">K宇宙（地星K侧）</div>
                 <div class="uni-desc" data-lang="K小队 · 凯特科技">K小队 · 凯特科技</div>
             </a>
 
             <!-- W宇宙 -->
             <a href="w-universe.html" class="universe-card">
                 <div class="uni-letter">W</div>
-                <div class="uni-name">W宇宙（武器宇宙）</div>
+                <div class="uni-name" data-lang="W宇宙（武器宇宙）">W宇宙（武器宇宙）</div>
                 <div class="uni-desc" data-lang="武器大师三兄弟">武器大师三兄弟</div>
             </a>
 
             <!-- N宇宙 -->
             <a href="n-universe.html" class="universe-card">
                 <div class="uni-letter">N</div>
-                <div class="uni-name">N宇宙</div>
+                <div class="uni-name" data-lang="N宇宙">N宇宙</div>
                 <div class="uni-desc" data-lang="王德法 · 多手 · Zona">王德法 · 多手 · Zona</div>
             </a>
 
             <!-- S宇宙 -->
             <a href="s-universe.html" class="universe-card">
                 <div class="uni-letter">S</div>
-                <div class="uni-name">S宇宙（School宇宙）</div>
+                <div class="uni-name" data-lang="S宇宙（School宇宙）">S宇宙（School宇宙）</div>
                 <div class="uni-desc" data-lang="已归档 · 教导主任 · Mr. Macris">已归档 · 教导主任 · Mr. Macris</div>
             </a>
-
         </div>
 
         <div class="footer" data-lang="次元宇宙档案馆">Цη¡νerse ∀erse · 次元宇宙档案馆</div>
